@@ -64,6 +64,7 @@ This Discord bot automates the sending of **astronomy facts** and **daily questi
 4. Create a .env file in the root directory and add your Discord bot token:
    ```env
    DISCORD_TOKEN=your_bot_token_here
+   DATABASE_URL="postgresql://user:password@localhost/database"
   
 5. Run the bot:
    ```bash

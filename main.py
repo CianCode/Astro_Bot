@@ -30,11 +30,11 @@ class Astro(commands.Bot):
 
     async def setup_hook(self):
         """Set up the bot and create the PostgreSQL connection pool."""
-        self.pool = await asyncpg.create_pool(self.database_url)  # Create the connection pool
+        self.pool = await asyncpg.create_pool(self.database_url, statement_cache_size=0)  # Create the connection pool
 
     async def load_cogs(self):
         for folder in self.cog_list:
-            if folder != "__pycache__" and folder != "config":
+            if folder != "__pycache__" and folder != "utils":
                 files = os.listdir(f'./cogs/{folder}')
                 for file in files:
                     if file.endswith('.py'):
